@@ -35,6 +35,6 @@ jobs:
           tag_name: commit-${{ steps.vars.outputs.sha_short }}
           name: "${{ steps.vars.outputs.sha_short }}"
           body: "Automated build for commit `${{ steps.vars.outputs.sha_short }}` on main"
-          files: target/*.jar
+          files: target/jellyfin-metacopy-1.0-SNAPSHOT-jar-with-dependencies.jar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
