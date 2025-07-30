@@ -16,6 +16,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Get short SHA
+        id: vars
+        run: echo "sha_short=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
@@ -28,9 +32,9 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ github.sha::7 }}
-          name: "Release for ${{ github.sha::7 }}"
-          body: "Automated build for commit `${{ github.sha::7 }}` on main"
+          tag_name: commit-${{ steps.vars.outputs.sha_short }}
+          name: "Release for commit ${{ steps.vars.outputs.sha_short }}"
+          body: "Automated build for commit `${{ steps.vars.outputs.sha_short }}` on main"
           files: target/*.jar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
