@@ -28,9 +28,9 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ github.sha }}
-          name: "Release for ${{ github.sha }}"
-          body: "Automated build for commit `${{ github.sha }}` on main"
+          tag_name: ${{ github.sha::7 }}
+          name: "Release for ${{ github.sha::7 }}"
+          body: "Automated build for commit `${{ github.sha::7 }}` on main"
           files: target/*.jar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
