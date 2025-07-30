@@ -33,7 +33,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: commit-${{ steps.vars.outputs.sha_short }}
-          name: "Release for commit ${{ steps.vars.outputs.sha_short }}"
+          name: "${{ steps.vars.outputs.sha_short }}"
           body: "Automated build for commit `${{ steps.vars.outputs.sha_short }}` on main"
           files: target/*.jar
         env:
