@@ -20,7 +20,7 @@ jobs:
         id: vars
         run: echo "sha_short=$(echo $GITHUB_SHA | cut -c1-7)" >> "$GITHUB_OUTPUT"
         env:
-        GITHUB_SHA: ${{ github.sha }}
+          GITHUB_SHA: ${{ github.sha }}
 
 
       - name: Set up JDK 21
