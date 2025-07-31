@@ -33,7 +33,7 @@ copyImages=true
 ```
 
 ## Running
-Download the latest JAR from [here](https://github.com/math-boy11/Jellyfin-MetaCopy/releases/latest/download/jellyfin-metacopy-1.0-SNAPSHOT-jar-with-dependencies.jar) and run the tool with the following command. Java 21 or later is required.
+Download the latest JAR from [here](https://github.com/math-boy11/Jellyfin-MetaCopy/releases/latest/download/jellyfin-metacopy-1.0-SNAPSHOT-jar-with-dependencies.jar) and run the tool with the following command. Java 11 or later is required.
 ```
 java -jar jellyfin-metacopy-1.0-SNAPSHOT-jar-with-dependencies.jar path/to/config.properties
 ```

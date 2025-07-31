@@ -56,13 +56,16 @@ public class Main {
                     // Check if the source doesn't have the field
                     if (!sourceItemFields.contains(field)) {
                         // Clear the target field by finding the type and setting it to it's appropriate empty value because Jellyfin will sometimes not clear it if it's null or gone
-                        Object value = targetItemData.get(field);
+                        Object value = sourceItemData.get(field);
 
-                        switch (value) {
-                            case Map map -> targetItemData.put(field, new LinkedHashMap<>());
-                            case List list -> targetItemData.put(field, new ArrayList<>());
-                            case String string -> targetItemData.put(field, "");
-                            case null, default -> targetItemData.put(field, null);
+                        if (value instanceof Map) {
+                            targetItemData.put(field, new LinkedHashMap<>());
+                        } else if (value instanceof List) {
+                            targetItemData.put(field, new ArrayList<>());
+                        } else if (value instanceof String) {
+                            targetItemData.put(field, "");
+                        } else {
+                            targetItemData.put(field, null);
                         }
                     }
                 }
