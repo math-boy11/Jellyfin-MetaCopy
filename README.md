@@ -18,8 +18,8 @@ This tool requires a config file. Create a `config.properties` file and add your
 - serverUrl: The URL of your Jellyfin server. Make sure it does not have a slash at the end.
 - apiKey: Create an API key in the Jellyfin admin dashboard (Dashboard -> API Keys)
 - userId: The ID of any user that has access to both items
-- sourceItemId: The ID of your source item
-- targetItemId: The ID of your target item
+- sourceItemIds: The list of source item IDs
+- targetItemIds: The list of target item IDs
 - copyImages: Whether or not to copy the item images
 
 Example:
@@ -27,8 +27,8 @@ Example:
 serverUrl=<YOUR_JELLYFIN_SERVER_URL>
 apiKey=<YOUR_JELLYFIN_API_KEY>
 userId=95707b986fac4983b52aa8e7cdb5aafa
-sourceItemId=0194df9f418205064cef85fa7359361e
-targetItemId=4ca8a8288bbaf7b1370a7caec8c04828
+sourceItemIds=71b5224878d04bbcd5e0e3fc8b40418d,a6a98f32d0b331161bd1ac0f6a2aa204
+targetItemIds=cf27cbd6644262ec30a48300024f70c3,502cdfc5fa705bc2a60392e41884ef42
 copyImages=true
 ```
 
